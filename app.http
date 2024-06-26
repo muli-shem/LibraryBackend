@@ -3,23 +3,28 @@
 GET http://localhost:8000/api/Books
 
 ###
-GET http://localhost:8000/api/Books/3
+GET http://localhost:8000/api/Books/7
 
 ###
-PUT  http://localhost:8000/api/Books
+PUT  http://localhost:8000/api/Books/7
+
+{ 
+    "id": 7,
+    "Title": "The RTiver and the source",
+    "Author": "Susan K Matei",
+    "Year": "2003"
+}
 
 ###
 POST  http://localhost:8000/api/Books
 Content-Type: application/json
 
 { 
-    "id": 6,
+    "id": 8,
     "Title": "The RTiver and the source",
     "Author": "Susan K Matei",
     "Year": "2005"
 }
 ###
-DELETE  http://localhost:8000/api/Books/6
+DELETE  http://localhost:8000/api/Books/8
 
-###
-GET http://localhost:8000/api/Books

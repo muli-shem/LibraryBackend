@@ -16,20 +16,6 @@ export const listBooks = async (c:Context) =>{
         return c.json({error: error?.message}, 400);
     }
 }
-
-export const getBooks = async (c:Context) =>{
-    try {
-        const Books = await c.req.json();
-        const createdBook = await createBookService(Books);
-
-
-        if (!createdBook) return c.text("Book not created", 404);
-        return c.json({ msg: createdBook }, 201);
-
-    } catch (error: any) {
-        return c.json({ error: error?.message }, 400)
-    }
-}
 export const updateBooks = async (c: Context) => {
     const id = parseInt(c.req.param("id"));
     if (isNaN(id)) return c.text("Invalid ID", 400);
@@ -49,7 +35,7 @@ export const updateBooks = async (c: Context) => {
         return c.json({ error: error?.message }, 400)
     }
 }
-export const getBook = async (c: Context) => {
+export const getBooks = async (c: Context) => {
     const id = parseInt(c.req.param("id"));
     if (isNaN(id)) return c.text("Invalid ID", 400);
 
