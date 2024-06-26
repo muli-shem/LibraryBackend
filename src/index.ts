@@ -45,6 +45,6 @@ app.route("/api", booksRouter)   // /users
 
 serve({
   fetch: app.fetch,
-  port: Number(process.env.PORT)
+  port: Number(process.env.PORT||3000)
 })
 console.log(`Server is running on port ${process.env.PORT}`)
