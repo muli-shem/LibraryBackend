@@ -7,12 +7,12 @@ GET http://localhost:8000/api/Books/7
 
 ###
 PUT  http://localhost:8000/api/Books/7
+Content-Type: application/json
 
 { 
     "id": 7,
-    "Title": "The RTiver and the source",
-    "Author": "Susan K Matei",
-    "Year": "2003"
+    "Title": "The River and the source"
+  
 }
 
 ###
