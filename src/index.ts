@@ -3,6 +3,7 @@ import { Hono } from 'hono'
 import "dotenv/config"
 import { logger } from 'hono/logger'
 import { csrf } from 'hono/csrf'
+import {cors }from "hono/cors"
 import { trimTrailingSlash } from 'hono/trailing-slash'
 import { timeout } from 'hono/timeout'
 import { HTTPException } from 'hono/http-exception'
@@ -28,7 +29,7 @@ app.use('/', timeout(10000, customTimeoutException))
 //3rd party middlewares
 app.use('*', registerMetrics)
 
-
+app.use('*', cors())
 // default route
 app.get('/ok', (c) => {
   return c.text('The server is running📢😏😏😏!')
